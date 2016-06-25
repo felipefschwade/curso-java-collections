@@ -10,5 +10,9 @@ public class TestandoListas {
 		cursos.add("PHPUnit");
 		cursos.add("Java e JDBC");
 		System.out.println(cursos);
+
+		cursos.remove(1);
+		System.out.println(cursos);
+		System.out.println(cursos.get(0));
 	}
 }
