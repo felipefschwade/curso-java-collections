@@ -1,6 +1,7 @@
 package br.com.testes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TestandoListas {
@@ -14,5 +15,8 @@ public class TestandoListas {
 		cursos.remove(1);
 		System.out.println(cursos);
 		System.out.println(cursos.get(0));
+
+		Collections.sort(cursos);
+		System.out.println(cursos);
 	}
 }
