@@ -19,4 +19,9 @@ public class Aula {
 		return nome;
 	}
 
+	@Override
+	public String toString() {
+		return "Aula [nome=" + this.nome + ", tempo=" + this.tempo + "]";
+	}
+
 }
