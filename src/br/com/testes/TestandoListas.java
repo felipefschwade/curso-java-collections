@@ -1,6 +1,7 @@
 package br.com.testes;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import br.com.classes.Aula;
@@ -15,6 +16,10 @@ public class TestandoListas {
 		aulas.add(a1);
 		aulas.add(a2);
 		aulas.add(a3);
+
+		System.out.println(aulas);
+
+		aulas.sort(Comparator.comparing(Aula::getTempo)); //Sitaxe: comparing(class::method)
 
 		System.out.println(aulas);
 	}
