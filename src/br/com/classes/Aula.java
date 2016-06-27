@@ -1,6 +1,6 @@
 package br.com.classes;
 
-public class Aula {
+public class Aula implements Comparable<Aula> {
 
 	private int tempo;
 	private String nome;
@@ -22,6 +22,12 @@ public class Aula {
 	@Override
 	public String toString() {
 		return "Aula [nome=" + this.nome + ", tempo=" + this.tempo + "]";
+	}
+
+	@Override
+	public int compareTo(Aula outraAula) {
+		// TODO Auto-generated method stub
+		return this.nome.compareTo(outraAula.getNome());
 	}
 
 }
