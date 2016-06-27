@@ -1,22 +1,21 @@
 package br.com.testes;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import br.com.classes.Aula;
 
 public class TestandoListas {
 	public static void main(String[] args) {
-		List<String> cursos = new ArrayList<>();
-		cursos.add("Laravel");
-		cursos.add("PHPUnit");
-		cursos.add("Java e JDBC");
-		System.out.println(cursos);
+		List<Aula> aulas = new ArrayList<>();
+		Aula a1 = new Aula("Revistando as ArrayLists", 21);
+		Aula a2 = new Aula("Listas de objetos", 20);
+		Aula a3 = new Aula("Relacionamento de listas e objetos", 15);
 
-		cursos.remove(1);
-		System.out.println(cursos);
-		System.out.println(cursos.get(0));
+		aulas.add(a1);
+		aulas.add(a2);
+		aulas.add(a3);
 
-		Collections.sort(cursos);
-		System.out.println(cursos);
+		System.out.println(aulas);
 	}
 }
