@@ -1,5 +1,6 @@
 package br.com.classes;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Curso {
 	}
 
 	public List<Aula> getAulas() {
-		return aulas;
+		return Collections.unmodifiableList(this.aulas);
 	}
 
 	public String getNome() {
@@ -26,4 +27,7 @@ public class Curso {
 		return instrutor;
 	}
 
+	public void adiciona(Aula aula) {
+		this.aulas.add(aula);
+	}
 }
