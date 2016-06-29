@@ -28,6 +28,7 @@ public class TestaCurso2 {
 
 		System.out.println(aulas);
 		System.out.println(curso.getTempoTotal());
+		System.out.println(curso);
 	}
 
 }
