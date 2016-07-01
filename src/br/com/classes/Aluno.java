@@ -13,4 +13,9 @@ public class Aluno {
 		return matricula;
 	}
 
+	@Override
+	public String toString() {
+		return "[Aluno: " + this.nome + ", matricula: " + this.matricula + "]";
+	}
+
 }
