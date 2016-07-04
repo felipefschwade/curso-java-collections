@@ -18,14 +18,20 @@ public class TestaCursoComAlunos {
 
 		System.out.println(curso.getAulas());
 
-		curso.matricula(new Aluno("Paulo", 123123));
+		Aluno a1 = new Aluno("Paulo", 123123);
+		curso.matricula(a1);
 		curso.matricula(new Aluno("Alberto", 321321));
 		curso.matricula(new Aluno("Pedro", 121233));
 		curso.matricula(new Aluno("Nico", 1234324));
 
+		Aluno a2 = new Aluno("Paulo", 123123);
+
 		Collection<Aluno> alunos = curso.getAlunos();
 
 		System.out.println(alunos);
+
+		System.out.println(curso.estaMatriculado(a1));
+		System.out.println(curso.estaMatriculado(a2));
 
 	}
 

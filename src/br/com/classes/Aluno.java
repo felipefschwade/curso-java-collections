@@ -24,4 +24,28 @@ public class Aluno {
 		return "[Aluno: " + this.nome + ", matricula: " + this.matricula + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		return this.nome.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object outroAluno) {
+		if (this == outroAluno)
+			return true;
+		if (outroAluno == null)
+			return false;
+		if (getClass() != outroAluno.getClass())
+			return false;
+		Aluno other = (Aluno) outroAluno;
+		if (matricula != other.matricula)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+
 }
