@@ -3,12 +3,14 @@ package br.com.classes;
 public class Aluno {
 
 	private String nome;
-	private int matricula;
+	private int numeroMatricula;
 
 	public Aluno(String nome, int matricula) {
-		super();
+		if (nome == null || matricula == 0) {
+			throw new NullPointerException("O Aluno deve possuir um nome e numero de matricula válido");
+		}
 		this.nome = nome;
-		this.matricula = matricula;
+		this.numeroMatricula = matricula;
 	}
 
 	public String getNome() {
@@ -16,12 +18,12 @@ public class Aluno {
 	}
 
 	public int getMatricula() {
-		return matricula;
+		return numeroMatricula;
 	}
 
 	@Override
 	public String toString() {
-		return "[Aluno: " + this.nome + ", matricula: " + this.matricula + "]";
+		return "[Aluno: " + this.nome + ", matricula: " + this.numeroMatricula + "]";
 	}
 
 	@Override
@@ -38,7 +40,7 @@ public class Aluno {
 		if (getClass() != outroAluno.getClass())
 			return false;
 		Aluno other = (Aluno) outroAluno;
-		if (matricula != other.matricula)
+		if (numeroMatricula != other.numeroMatricula)
 			return false;
 		if (nome == null) {
 			if (other.nome != null)
