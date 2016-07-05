@@ -1,13 +1,16 @@
 package br.com.classes;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Curso {
 
+	private Map<Integer, Aluno> matriculaParaAluno = new HashMap<>();
 	private String nome;
 	private String instrutor;
 	private List<Aula> aulas = new LinkedList<>();
@@ -45,6 +48,10 @@ public class Curso {
 
 	public void matricula(Aluno aluno) {
 		this.alunos.add(aluno);
+		if (this.matriculaParaAluno.get(aluno.getMatricula()) != null) {
+			throw new IllegalArgumentException("O Aluno:" + aluno + " já está matriculado");
+		}
+		this.matriculaParaAluno.put(aluno.getMatricula(), aluno);
 	}
 
 	public Set<Aluno> getAlunos() {
@@ -53,6 +60,10 @@ public class Curso {
 
 	public boolean estaMatriculado(Aluno a1) {
 		return this.alunos.contains(a1);
+	}
+
+	public Aluno buscaMatriculado(int matricula) {
+		return this.matriculaParaAluno.get(matricula);
 	}
 
 }

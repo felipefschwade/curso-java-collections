@@ -33,6 +33,7 @@ public class TestaCursoComAlunos {
 		System.out.println(curso.estaMatriculado(a1));
 		System.out.println(curso.estaMatriculado(a2));
 
+		System.out.println(curso.buscaMatriculado(321321));
 	}
 
 }
